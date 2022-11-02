@@ -107,6 +107,24 @@ $classe=$_SESSION['classe'];
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>
@@ -242,7 +260,7 @@ $classe=$_SESSION['classe'];
                       
                        while ($row2 = pg_fetch_row($result)) {
    echo' 
-   <form method="POST" action="../xBaxkEnd/pageaffecetud.php">
+   <form method="POST" action="../xBackEnd/pageaffecetud.php">
 
                                                 <tr>
                                                 <td><input type="text" name="" value="'.$row2[0].'" disabled >
@@ -256,12 +274,14 @@ $classe=$_SESSION['classe'];
 
                                                 
                                                  <td> <select name="annee_sco">
-                                                                        <option>Choisir Année Scolaire</option>';
                                                                        
-                    while ($row3 = pg_fetch_row($result2)) {
-
-                      echo '<option>'.$row3[0].'</option>';
-                    }
+                    					  <option>2020-21</option>
+                                          <option>2021-22</option>
+                                          <option>2022-23</option>
+                                          <option>2023-24</option>
+                                          <option>2024-25</option>
+                                          <option>2025-26</option>
+                                          <option>2026-27</option>';
                   
 
                                                                         echo '</select> </td>

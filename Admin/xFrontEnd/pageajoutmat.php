@@ -78,22 +78,22 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
               <p>Accueil</p>
             </a>
           </li>
-          <li >
-            <a href="Professeurs.php">
-              <i class="now-ui-icons education_atom"></i>
-              <p>Professeurs</p>
+          <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
             </a>
           </li>
           <li>
-            <a href="Etudiants.php">
-              <i class="now-ui-icons education_hat"></i>
-              <p>Etudiants</p>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
             </a>
           </li>
           <li>
-            <a href="Matieres.php">
-              <i class="now-ui-icons education_paper"></i>
-              <p>Matières</p>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
             </a>
           </li>
           <li>
@@ -103,9 +103,21 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
             </a>
           </li>
           <li>
-            <a href="Profil.php">
-              <i class="now-ui-icons business_badge"></i>
-              <p>Profil</p>
+            <a href="Emploi.php">
+              <i class="now-ui-icons users_circle-08"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons users_circle-08"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons users_circle-08"></i>
+              <p>Bibliothèque</p>
             </a>
           </li>
           <li class="active ">
@@ -180,7 +192,7 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
           <div class="col-md-12">
             <div class="card card-plain">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"></h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

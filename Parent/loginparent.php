@@ -38,12 +38,7 @@ function random_1($car) {
       </label>
       <button class="submit" type="submit">Se Connecter</button>
       <div class="social-media">
-        <ul>
-          <a href="https://www.facebook.com/" target="blank"><li><img src="images/facebook.png"></li></a>
-          <a href="https://www.twitter.com/"  target="blank"><li><img src="images/twitter.png"></li></a>
-          <a href="https://www.linkedin.com/"  target="blank"><li><img src="images/linkedin.png"></li></a>
-          <a href="https://www.instagram.com/"  target="blank"><li><img src="images/instagram.png"></li></a>
-        </ul>
+        
       </div>
     </div>
     </form>

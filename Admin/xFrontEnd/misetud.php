@@ -101,6 +101,24 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>
@@ -185,6 +203,11 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
                         Classe
                       </th>
                       <th class="text-right">
+
+                        
+                      </th>
+                      <th class="text-right">
+                        
                         
                       </th>
                     </thead>
@@ -206,19 +229,20 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
 
 
                                                     <td> <select name="annee_sco">
-                                                                        <option>Choisir Année Scolaire</option>';
+                                          <option>2020-21</option>
+                                          <option>2021-22</option>
+                                          <option>2022-23</option>
+                                          <option>2023-24</option>
+                                          <option>2024-25</option>
+                                          <option>2025-26</option>
+                                          <option>2026-27</option>';
                                                                        
-                     while ($row2 = pg_fetch_row($result2)) {
-
-                      echo '<option>'.$row2[0].'</option>';
-                    }
-                  
 
                                                                         echo '</select> </td>
 
 
                                                 <td class="text-right"> <select name="classe"> 
-                                                                        <option>Choisir Classe</option>
+                                                                        
                                                                         <option>L1A</option>
                                                                         <option>L1B</option>
                                                                         <option>L1C</option>
@@ -232,6 +256,7 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
                                                
 
                                                 <td class="text-right"> <button type="submit" class="btn btn-primary">Affecter salle</button> </td>
+                                                <td class="text-right"> <a href="refus.php?id='.$row[0].'"> <button type="button" class="btn btn-success">Refuser demande</button></a> </td>
         
                                                 </tr>
 

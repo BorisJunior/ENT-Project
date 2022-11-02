@@ -10,8 +10,13 @@ session_start();
   header("location: pagerror.php");
 }
 
-  $query="SELECT parent.id_parent, nom, prenom, matricule, nom_etud, prenom_etud, id_classe FROM etudiant INNER JOIN parent ON etudiant.id_parent = parent.id_parent";
+  $query="SELECT parent.id_parent, nom, prenom, matricule, nom_etud, prenom_etud, id_classe FROM etudiant INNER JOIN parent ON etudiant.matricule = parent.value
+  WHERE act = 'FALSE'";
   $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
+
+$query1="SELECT parent.id_parent, nom, prenom, matricule, nom_etud, prenom_etud, id_classe FROM etudiant INNER JOIN parent ON etudiant.id_parent = parent.id_parent
+  WHERE act = 'true'";
+  $result1 = pg_query($db_handle, $query1) or die("Cannot execute query: $query\n");
 
 
 ?>
@@ -96,6 +101,24 @@ session_start();
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>
@@ -145,7 +168,7 @@ session_start();
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Liste des tuteurs</h4>
+                <h4 class="card-title">Liste des tuteurs à valider</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -172,11 +195,18 @@ session_start();
                       <th>
                          Classe
                       </th>
+                      <th>
+                         
+                      </th>
+                      <th>
+                         
+                      </th>
                     </thead>
                     <tbody>
                       <?php  
 while ($row = pg_fetch_row($result)) {
    echo'
+    <form method="POST" action="../xBackEnd/ajoutparent.php">
 
                                                 <tr>
                                                 <td><input type="text" name="" value="'.$row[0].'" disabled >
@@ -189,7 +219,7 @@ while ($row = pg_fetch_row($result)) {
                                                     <input type="hidden" name="etudprenom" value="'.$row[2].'" disabled> </td>
 
                                                     <td><input type="text" name="" value="'.$row[3].'" disabled>
-                                                    <input type="hidden" name="etudprenom" value="'.$row[3].'" disabled> </td>
+                                                    <input type="hidden" name="etud" value="'.$row[3].'" > </td>
 
                                                     <td><input type="text" name="" value="'.$row[4].'" disabled>
                                                     <input type="hidden" name="etudprenom" value="'.$row[4].'" disabled> </td>
@@ -198,11 +228,91 @@ while ($row = pg_fetch_row($result)) {
                                                     <input type="hidden" name="etudprenom" value="'.$row[5].'" disabled> </td>
 
                                                     <td><input type="text" name="" value="'.$row[6].'" disabled>
-                                                    <input type="hidden" name="etudprenom" value="'.$row
-                                                    [5].'" disabled> </td>
+                                                    <input type="hidden" name="etudprenom" value="'.$row[5].'" disabled> </td>
+
+                                                    <td class="text-right"> <button type="submit" class="btn btn-primary">Valider demande</button></td>
+                                                <td class="text-right"> <a href="refuspa.php?id='.$row[0].'"> <button type="button" class="btn btn-success">Refuser demande</button></a> </td>
                                                 
         
                                                 </tr>
+     </form>
+
+  ';}?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Liste des tuteurs déjà validés</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                       Identifiant du tuteur
+                      </th>
+                      <th>
+                        Nom du tuteur
+                      </th>
+                      <th>
+                        Prenoms du tuteur
+                      </th>
+                      <th>
+                        Matricule de l'étudiant
+                      </th>
+                      <th>
+                         Nom de l'étudiant
+                      </th>
+                      <th>
+                         Prénom de l'étudiant
+                      </th>
+                      <th>
+                         Classe
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      <?php  
+while ($row1 = pg_fetch_row($result1)) {
+   echo'
+    <form method="POST" action="../xBackEnd/ajoutparent.php">
+
+                                                <tr>
+                                                <td><input type="text" name="" value="'.$row1[0].'" disabled >
+                                                    <input type="hidden" name="matetud" value="'.$row1[0].'"></td>
+
+                                                <td><input type="text" name="" value="'.$row1[1].'" disabled>
+                                                    <input type="hidden" name="etudnom" value="'.$row1[1].'"> </td>
+
+                                                <td><input type="text" name="" value="'.$row1[2].'" disabled>
+                                                    <input type="hidden" name="etudprenom" value="'.$row1[2].'" disabled> </td>
+
+                                                    <td><input type="text" name="" value="'.$row1[3].'" disabled>
+                                                    <input type="hidden" name="etudprenom" value="'.$row1[3].'" disabled> </td>
+
+                                                    <td><input type="text" name="" value="'.$row1[4].'" disabled>
+                                                    <input type="hidden" name="etudprenom" value="'.$row1[4].'" disabled> </td>
+
+                                                    <td><input type="text" name="" value="'.$row1[5].'" disabled>
+                                                    <input type="hidden" name="etudprenom" value="'.$row1[5].'" disabled> </td>
+
+                                                    <td><input type="text" name="" value="'.$row1[6].'" disabled>
+                                                    <input type="hidden" name="etudprenom" value="'.$row1[5].'" disabled> </td>
+
+                                                    
+                                                </tr>
+     </form>
 
   ';}?>
                     </tbody>

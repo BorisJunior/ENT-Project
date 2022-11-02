@@ -211,7 +211,7 @@ h1 small {
 
 <h1>404 ERROR Page Not Found 
 	<small>You must be disconnected. 
-		Try to connect <a href="login">here</a></small></h1>
+		Try to connect <a href="../Login/login.php">here</a></small></h1>
 	
 </div>
 </body>

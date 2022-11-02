@@ -98,6 +98,24 @@ $result = pg_query($db_handle, $query) or die("Cannot execute query: $query\n");
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>

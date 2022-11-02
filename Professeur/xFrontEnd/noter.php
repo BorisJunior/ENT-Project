@@ -198,9 +198,9 @@ $result3 = pg_query($db_handle, $query3) or die("Cannot execute query: $query\n"
 
                                         <td>'.$row[2].'</td>
 
-                                        <td><input type="number" name="devoir" value="" ></td>
+                                        <td><input type="number" min="0" max="20" name="devoir" value="" ></td>
 
-                                        <td><input type="number" name="partiel" value="" ></td>
+                                        <td><input type="number" min="0" max="20" name="partiel" value="" ></td>
 
                                         <td><button type="submit" class="btn btn-primary">Noter</button></td>
                                     </tr>
@@ -222,8 +222,8 @@ $result3 = pg_query($db_handle, $query3) or die("Cannot execute query: $query\n"
                                     <tr>
                                         <th>Nom de l'Etudiant</th>
                                         <th>Prenom de l'Etudiant</th>
-                                        <th>Note de Devoir</th>
-                                        <th>Note de Partiel</th>
+                                        <th class="text-right">Note de Devoir</th>
+                                        <th class="text-right">Note de Partiel</th>
                                     </tr>
                                 </thead>
                                 <tbody>

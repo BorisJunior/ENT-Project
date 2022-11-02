@@ -45,15 +45,6 @@ function random_1($car) {
       <br>
       <button class="submit" type="submit">Se Connecter</button>
 
-      <div class="social-media">
-        <ul>
-
-          <a href="https://www.facebook.com/" target="blank"><li><img src="../images/facebook.png"></li></a>
-          <a href="https://www.twitter.com/"  target="blank"><li><img src="../images/twitter.png"></li></a>
-          <a href="https://www.linkedin.com/"  target="blank"><li><img src="../images/linkedin.png"></li></a>
-          <a href="https://www.instagram.com/"  target="blank"><li><img src="../images/instagram.png"></li></a>
-        </ul>
-      </div>
     </div>
     </form>
     <form method="POST" action="traitementetudup.php">
@@ -85,7 +76,7 @@ function random_1($car) {
         </label>
         <label>
           <span>Date de naissance</span>
-          <input type="Date" name="date">
+          <input type="Date" name="date" min="1995-12-31" max="2005-12-31" >
         </label>
         <label>
           <span>Lieu de naissance</span>

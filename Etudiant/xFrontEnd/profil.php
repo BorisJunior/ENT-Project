@@ -98,26 +98,44 @@ if ($_SESSION['login']) {
       <br>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
+              <ul class="nav">
           <li>
             <a href="Accueil.php">
               <i class="nc-icon nc-briefcase-24"></i>
               <p>Accueil</p>
             </a>
           </li>
-          <li >
+          <li>
+            <a href="Emploi.php">
+              <i class="nc-icon nc-calendar-60"></i>
+              <p>Emploi du temps</p>
+            </a>
+            </li>
+            <li>
+            <a href="Activite.php">
+              <i class="nc-icon nc-laptop"></i>
+              <p>Espace Documents</p>
+            </a>
+          </li>
+            <li>
             <a href="NoteDevoir.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Devoir</p>
             </a>
-            </li>
-            <li>
+          </li>
+          <li>
             <a href="NotePartiel.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Partiel</p>
             </a>
           </li>
-          <li  class="active ">
+          <li>
+            <a href="NoteI.php">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Notes d'information</p>
+            </a>
+          </li>
+          <li class="active ">
             <a href="profil.php">
               <i class="nc-icon nc-badge"></i>
               <p>Profil</p>
@@ -125,10 +143,9 @@ if ($_SESSION['login']) {
           </li>
         </ul>
       </div>
-
     </div>
-
     <div class="main-panel">
+     
      
     
     <!-- Preloader -->

@@ -11,24 +11,22 @@ $db_handle = pg_connect("host=ec2-3-214-3-162.compute-1.amazonaws.com dbname=d3u
  $password = $_POST['pass'];
 
 
- $sql = "SELECT * FROM etudiant WHERE email_etud = '$login' AND password_etud = '$password'";
+ $sql = "SELECT * FROM etudiant INNER JOIN classe ON etudiant.id_classe = classe.id_classe WHERE email_etud = '$login' AND password_etud = '$password'";
  $data = pg_query($db_handle,$sql); 
 $login_check = pg_num_rows($data);
 
 
 
  if($login_check > 0){ 
-
-        while ($row = pg_fetch_row($data)) {
-      
+      while ($row = pg_fetch_row($data)) {
+  
       $_SESSION['login'] =$row[0] ;
-    }
-
        header("location: ../xFrontEnd/Accueil.php");
   
-    }else{
+    }
+  }else{
         
-        echo "Invalid Details";
+        echo "Votre n'a pas été activé. Veuillez contacter l'admin";
     }
 
 }

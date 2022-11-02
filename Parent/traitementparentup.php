@@ -1,9 +1,9 @@
 <?php  
-require_once('access.php');
-$ac = new Access();
-$con= $ac->connection();
+session_start();
 
-if (!empty($_POST['nom']&&$_POST['prenom']&&$_POST['nomE']&&$_POST['teleph']&&$_POST['email']&&$_POST['password'])) {
+if  (!empty($_POST['nom']&&$_POST['prenom']&&$_POST['nomE']&&$_POST['teleph']&&$_POST['email']&&$_POST['password'])) {
+
+	$db_handle = pg_connect("host=ec2-3-214-3-162.compute-1.amazonaws.com dbname=d3urkvei1lanb1 user=rlmcybmaxecgds password=6d1ee81dc24beb6f2fdf158bea72ba96edc0e95b4a6f085dfc32cadb3cc61dea");
 
 
 $nom=$_POST['nom'];
@@ -14,23 +14,26 @@ $teleph=$_POST['teleph'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-$req = $con->prepare("INSERT INTO parent (Id_parent, Nom, Prenom, Teleph_Parent, Email_Parent, Password_Parent)
-					VALUES('$id_parent','$nom','$prenom', '$teleph', '$email', '$password' )");
+$query = "INSERT INTO parent (id_parent, nom, prenom, teleph_Parent, email_parent,password_Parent, act, value)
+					VALUES('$id_parent','$nom','$prenom', '$teleph', '$email', '$password', 'FALSE','$nomE' )";
 
-$req->execute();
-
-
-$req2 = $con->prepare("UPDATE `etudiant` SET `Fk_Id_Parent` = '$id_parent' WHERE `etudiant`.`Matricule` = '$nomE'");
-
-$req2->execute();
+$result = pg_query($db_handle,$query);
 
 
-header("location: loginparent.php");
+
+
+
+if ($result) {
+        header("location: loginparent.php");
+    } else {
+     echo "Les données POSTées n'ont pas pu être enregistrée avec succès.\n";
+
+   }
+
 }  else {
   echo "<div class='alert alert-danger' role='alert'><center>
       VEUILLEZ RENSEIGNER TOUS LES CHAMPS
      </center></div>";
   }
-
 
 ?>

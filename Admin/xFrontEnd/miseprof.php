@@ -97,6 +97,24 @@ if ($_SESSION['login']) {
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>
@@ -183,6 +201,9 @@ if ($_SESSION['login']) {
                       <th class="text-right">
                         
                       </th>
+                      <th class="text-right">
+                        
+                      </th>
                     </thead>
                     <tbody>
                       <?php  
@@ -200,7 +221,7 @@ if ($_SESSION['login']) {
                                                 <td><input type="text" name="" value="'.$row[2].'" disabled>
                                                     <input type="hidden" name="profprenom" value="'.$row[2].'"> </td>
                                                 <td class="text-right"> <select name="classe"> 
-                                                                        <option>Choisir Classe</option>
+                                                                        
                                                                         <option>L1A</option>
                                                                         <option>L1B</option>
                                                                         <option>L1C</option>
@@ -212,6 +233,7 @@ if ($_SESSION['login']) {
                                                                         </select> </td>
 
                                                 <td class="text-right"> <button type="submit" class="btn btn-primary">Affecter salle</button> </td>
+                                                <td class="text-right"> <a href="refusp.php?id='.$row[0].'"> <button type="button" class="btn btn-success">Refuser demande</button></a> </td>
         
                                                 </tr>
 

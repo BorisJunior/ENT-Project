@@ -26,6 +26,10 @@ $query2="UPDATE etudiant SET annee_sco = '$an' WHERE matricule = '$mat'";
 pg_query($db_handle, $query2) or die("Cannot execute query: $query\n");
 
 
+$query2="UPDATE etudiant SET activeretud = 'TRUE' WHERE matricule = '$mat'";
+pg_query($db_handle, $query2) or die("Cannot execute query: $query\n");
+
+
 header("location: ../xFrontEnd/listetud.php");
  
 

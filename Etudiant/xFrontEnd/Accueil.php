@@ -81,15 +81,33 @@ $result3 = pg_query($db_handle, $query2) or die("Cannot execute query: $query\n"
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="nc-icon nc-calendar-60"></i>
+              <p>Emploi du temps</p>
+            </a>
+            </li>
+            <li>
+            <a href="Activite.php">
+              <i class="nc-icon nc-laptop"></i>
+              <p>Espace Documents</p>
+            </a>
+          </li>
+            <li>
             <a href="NoteDevoir.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Devoir</p>
             </a>
-            </li>
-            <li>
+          </li>
+          <li>
             <a href="NotePartiel.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Partiel</p>
+            </a>
+          </li>
+          <li>
+            <a href="NoteI.php">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Notes d'information</p>
             </a>
           </li>
           <li>

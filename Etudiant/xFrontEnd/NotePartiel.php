@@ -95,25 +95,42 @@ font-family:sans-serif;
       <br>
       <br>
       </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
+           <div class="sidebar-wrapper">
+              <ul class="nav">
           <li>
             <a href="Accueil.php">
               <i class="nc-icon nc-briefcase-24"></i>
               <p>Accueil</p>
             </a>
           </li>
-
-          <li >
+          <li>
+            <a href="Emploi.php">
+              <i class="nc-icon nc-calendar-60"></i>
+              <p>Emploi du temps</p>
+            </a>
+            </li>
+            <li>
+            <a href="Activite.php">
+              <i class="nc-icon nc-laptop"></i>
+              <p>Espace Documents</p>
+            </a>
+          </li>
+            <li>
             <a href="NoteDevoir.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Devoir</p>
             </a>
-            </li>
-            <li  class="active ">
+          </li>
+          <li class="active">
             <a href="NotePartiel.php">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>Notes de Partiel</p>
+            </a>
+          </li>
+          <li>
+            <a href="NoteI.php">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Notes d'information</p>
             </a>
           </li>
           <li>
@@ -125,7 +142,6 @@ font-family:sans-serif;
         </ul>
       </div>
     </div>
-
     <div class="main-panel">
      
     
@@ -221,7 +237,7 @@ $result2 = pg_query($db_handle, $query2) or die("Cannot execute query: $query\n"
             <div class="card ">
               <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Notes de Devoir '.$an.'</h4>
+                <h4 class="card-title"> Notes de Partiel '.$an.'</h4>
               </div>
               <div class="card-body">
                 <div id="divName" class="table-responsive">
@@ -234,7 +250,7 @@ $result2 = pg_query($db_handle, $query2) or die("Cannot execute query: $query\n"
                         Matière
                       </th>
                       <th>
-                        Devoir
+                        Partiel
                       </th>
                     </thead>
                     <tbody>';

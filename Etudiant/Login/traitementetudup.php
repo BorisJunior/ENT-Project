@@ -1,4 +1,5 @@
 <?php  
+session_start();
 
 if (!empty($_POST['nom']&&$_POST['prenom']&&$_POST['date']&&$_POST['lieu']&&$_POST['sexe']&&$_POST['email']&&$_POST['password'])) {
 
@@ -20,7 +21,7 @@ $query = "INSERT INTO etudiant (matricule, nom_etud, prenom_etud, date_naiss, li
 $result = pg_query($db_handle,$query);
 
 if ($result) {
-        header("location: loginetud.php")
+        header("location: loginetud.php");
     } else {
      echo "Les données POSTées n'ont pas pu être enregistrée avec succès.\n";
 

@@ -111,6 +111,24 @@ $result3 = pg_query($db_handle, $query3) or die("Cannot execute query: $query\n"
             </a>
           </li>
           <li>
+            <a href="Emploi.php">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Emploi du Temps</p>
+            </a>
+          </li>
+          <li>
+            <a href="Note.php">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Note d'informations</p>
+            </a>
+          </li>
+          <li>
+            <a href="Biblio.php">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Bibliothèque</p>
+            </a>
+          </li>
+          <li>
             <a href="">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>...</p>
@@ -323,8 +341,10 @@ $result3 = pg_query($db_handle, $query3) or die("Cannot execute query: $query\n"
                                                
                                                 <td class="text-right">'.$row3[4].'</td>
 
+                                                
+  ';}?>
                                                 <td class="text-right"> <select name="classe">
-                                                                        <option>Choisir Classe</option> 
+                                                                         
                                                                         <option>L1A</option>
                                                                         <option>L1B</option>
                                                                         <option>L1C</option>
@@ -339,8 +359,6 @@ $result3 = pg_query($db_handle, $query3) or die("Cannot execute query: $query\n"
         
                                                 </tr>
 
-  ';}?>
-                                                
 
 
  </form>
